@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marksheet</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f4fff6;
+            text-align: center;
+        }
+
+        table{
+            margin: auto;
+            background: white;
+        }
+
+        caption{
+            font-size: 26px;
+            font-weight: bold;
+            color: black;
+            padding: 10px;
+        }
+
+        th{
+            background-color: #ffd9df;
+            color: black;
+        }
+
+        tfoot td{
+            background-color: #d9e0ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>SB Jain College of Engineering</h1>
+<h3>Computer Science and Engineering Department</h3>
+
+<table border="2" cellpadding="10" cellspacing="0">
+
+    <caption>Student Marksheet</caption>
+
+    <!-- HEADER -->
+    <thead>
+        <tr>
+            <th rowspan="2">Roll No</th>
+            <th rowspan="2">Student Name</th>
+            <th rowspan="2">Branch</th>
+            <th colspan="3">Marks</th>
+            <th rowspan="2">Total</th>
+            <th rowspan="2">Grade</th>
+        </tr>
+
+        <tr>
+            <th>Maths</th>
+            <th>Physics</th>
+            <th>Programming</th>
+        </tr>
+    </thead>
+
+    <!-- BODY -->
+    <tbody>
+
+        <tr>
+            <td>201</td>
+            <td>Riva sharma</td>
+            <td>AIML</td>
+            <td>75</td>
+            <td>79</td>
+            <td>98</td>
+            <td>252</td>
+            <td>A</td>
+        </tr>
+
+        <tr>
+            <td>202</td>
+            <td>Tiya verma</td>
+            <td>CSE</td>
+            <td>92</td>
+            <td>88</td>
+            <td>95</td>
+            <td>275</td>
+            <td>A+</td>
+        </tr>
+
+        <tr>
+            <td>203</td>
+            <td>siddhi bamnote</td>
+            <td>IT</td>
+            <td>60</td>
+            <td>58</td>
+            <td>65</td>
+            <td>183</td>
+            <td>B+</td>
+        </tr>
+
+        <tr>
+            <td>204</td>
+            <td>Tejal hedau</td>
+            <td>IT</td>
+            <td>88</td>
+            <td>82</td>
+            <td>91</td>
+            <td>261</td>
+            <td>A</td>
+        </tr>
+
+        <tr>
+            <td>205</td>
+            <td>Kanak shahu</td>
+            <td>CSE</td>
+            <td>60</td>
+            <td>72</td>
+            <td>65</td>
+            <td>197</td>
+            <td>C</td>
+        </tr>
+
+    </tbody>
+
+    <!-- FOOTER -->
+    <tfoot>
+        <tr>
+            <td colspan="8">Total Students: 5 | Passing Marks: 45 per subject</td>
+        </tr>
+    </tfoot>
+
+</table>
+
+</body>
+</html>
