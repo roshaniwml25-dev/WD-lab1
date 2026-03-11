@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scholarship / Seminar Registration</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#00c9a7,#92fe9d);
+}
+
+.container{
+    width:650px;
+    margin:auto;
+    background:#ffffff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 20px gray;
+}
+
+h1{
+    text-align:center;
+    color:#0a5f4d;
+}
+
+fieldset{
+    border:2px solid #00a884;
+    border-radius:10px;
+    margin-bottom:18px;
+    padding:15px;
+}
+
+legend{
+    font-size:18px;
+    font-weight:bold;
+    color:#007a63;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:10px;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.radio-group{
+    margin-top:8px;
+}
+
+.radio-group input{
+    width:auto;
+    margin-right:5px;
+}
+
+.checkbox-group{
+    margin-top:8px;
+}
+
+.checkbox-group input{
+    width:auto;
+    margin-right:5px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#00a884;
+    color:white;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#007a63;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Scholarship / Seminar Form</h1>
+
+<form>
+
+<fieldset>
+<legend>Personal Details</legend>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name">
+
+<label>Email</label>
+<input type="email" placeholder="Enter email">
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter phone number">
+
+<label>Gender</label>
+<div class="radio-group">
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+</div>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Education Details</legend>
+
+<label>College Name</label>
+<input type="text">
+
+<label>Course</label>
+<select>
+<option>Select Course</option>
+<option>BCA</option>
+<option>BSc IT</option>
+<option>B.Tech</option>
+<option>MCA</option>
+</select>
+
+<label>Year</label>
+<select>
+<option>Select Year</option>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>Final Year</option>
+</select>
+
+</fieldset>
+
+
+<fieldset>
+<legend>Program Selection</legend>
+
+<label>Apply For</label>
+<div class="radio-group">
+<input type="radio" name="program"> Scholarship
+<input type="radio" name="program"> Seminar
+</div>
+
+<label>Topics of Interest</label>
+<div class="checkbox-group">
+<input type="checkbox"> AI<br>
+<input type="checkbox"> Web Development<br>
+<input type="checkbox"> Cyber Security<br>
+<input type="checkbox"> Cloud Computing
+</div>
+
+<label>Preferred Seminar Date</label>
+<input type="date">
+
+</fieldset>
+
+
+<fieldset>
+<legend>Address</legend>
+
+<label>Full Address</label>
+<textarea rows="3"></textarea>
+
+</fieldset>
+
+<button type="submit">Register Now</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
