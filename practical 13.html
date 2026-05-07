@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modern Bootstrap Site</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* Custom Styling */
+.hero {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+footer {
+    background: #222;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container">
+    <a class="navbar-brand fw-bold">MyBrand</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link active">Home</a></li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Explore</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">Projects</a></li>
+            <li><a class="dropdown-item">Gallery</a></li>
+            <li><a class="dropdown-item">Blog</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <button class="btn btn-outline-light ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Sign In
+          </button>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Welcome to My Modern Site</h1>
+    <p>Responsive | Stylish | Bootstrap Powered</p>
+    <button class="btn btn-light mt-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+      Get Started
+    </button>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="container mt-3">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Features</li>
+    </ol>
+  </nav>
+</div>
+
+<!-- Cards Section -->
+<div class="container mt-4">
+  <div class="row text-center">
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card shadow p-3">
+        <h4>💡 Ideas</h4>
+        <p>Creative solutions for modern problems.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card shadow p-3">
+        <h4>⚡ Speed</h4>
+        <p>Fast and optimized responsive design.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card shadow p-3">
+        <h4>🔒 Security</h4>
+        <p>Reliable and secure web practices.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Form Section -->
+<div class="container mt-5">
+  <div class="row">
+    
+    <div class="col-md-6">
+      <h3>Contact Us</h3>
+      <form>
+        <input type="text" class="form-control mb-3" placeholder="Your Name">
+        <input type="email" class="form-control mb-3" placeholder="Email">
+        <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+        <button class="btn btn-primary w-100">Send Message</button>
+      </form>
+    </div>
+
+    <div class="col-md-6 d-flex align-items-center">
+      <img src="https://source.unsplash.com/500x300/?technology" class="img-fluid rounded">
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Login</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <input type="email" class="form-control mb-3" placeholder="Email">
+        <input type="password" class="form-control mb-3" placeholder="Password">
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-success">Login</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-white text-center p-3 mt-5">
+  <p>© 2026 Modern Bootstrap Site</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
