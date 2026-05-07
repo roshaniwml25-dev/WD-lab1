@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced HTML5 APIs Demo</title>
+
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        background: #f4f4f4;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .box {
+        width: 200px;
+        min-height: 200px;
+        border: 2px dashed #333;
+        padding: 10px;
+        background: white;
+    }
+
+    .item {
+        padding: 10px;
+        margin: 5px;
+        background: teal;
+        color: white;
+        cursor: grab;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 8px 15px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>HTML5 APIs (Advanced Demo)</h1>
+
+<!-- Drag & Drop -->
+<h2>Drag & Drop (Multiple Items)</h2>
+
+<div class="container">
+    <div class="box" id="source">
+        <div class="item" draggable="true">Item 1</div>
+        <div class="item" draggable="true">Item 2</div>
+        <div class="item" draggable="true">Item 3</div>
+    </div>
+
+    <div class="box" id="target">Drop Items Here</div>
+</div>
+
+<!-- Geolocation -->
+<h2>Geolocation with Map Link</h2>
+<button onclick="getLocation()">Find My Location</button>
+<p id="geo"></p>
+
+<!-- Web Storage -->
+<h2>Web Storage (Save Dropped Items)</h2>
+<button onclick="saveItems()">Save Items</button>
+<button onclick="loadItems()">Load Items</button>
+
+<script>
+// Drag & Drop
+let dragged;
+
+document.querySelectorAll(".item").forEach(item => {
+    item.addEventListener("dragstart", function(e) {
+        dragged = e.target;
+    });
+});
+
+document.getElementById("target").addEventListener("dragover", function(e) {
+    e.preventDefault();
+});
+
+document.getElementById("target").addEventListener("drop", function(e) {
+    e.preventDefault();
+    if (dragged) {
+        this.appendChild(dragged);
+    }
+});
+
+// Geolocation
+function getLocation() {
+    const output = document.getElementById("geo");
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(pos => {
+            let lat = pos.coords.latitude;
+            let lon = pos.coords.longitude;
+
+            output.innerHTML = `
+                Latitude: ${lat} <br>
+                Longitude: ${lon} <br>
+                <a href="https://www.google.com/maps?q=${lat},${lon}" target="_blank">
+                    View on Map
+                </a>
+            `;
+        }, () => {
+            output.innerText = "Permission denied or unavailable.";
+        });
+    } else {
+        output.innerText = "Geolocation not supported.";
+    }
+}
+
+// Web Storage
+function saveItems() {
+    let items = [];
+    document.querySelectorAll("#target .item").forEach(el => {
+        items.push(el.innerText);
+    });
+
+    localStorage.setItem("droppedItems", JSON.stringify(items));
+    alert("Items saved!");
+}
+
+function loadItems() {
+    let items = JSON.parse(localStorage.getItem("droppedItems")) || [];
+    let target = document.getElementById("target");
+
+    target.innerHTML = "";
+
+    items.forEach(text => {
+        let div = document.createElement("div");
+        div.className = "item";
+        div.draggable = true;
+        div.innerText = text;
+
+        div.addEventListener("dragstart", function(e) {
+            dragged = e.target;
+        });
+
+        target.appendChild(div);
+    });
+}
+</script>
+
+</body>
+</html>
